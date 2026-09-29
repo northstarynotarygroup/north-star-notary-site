@@ -228,6 +228,11 @@ button:hover{background:#E7B354}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px}
 .orcall{margin-top:18px;font-size:15.5px;color:#AEB9CC}
 .orcall a{color:var(--brass)}
+.consent-check{display:flex;align-items:flex-start;gap:9px;margin:14px 0 0;font-size:14.5px;color:#C6CEDC;cursor:pointer;font-weight:400}
+.consent-check input{width:auto;margin:3px 0 0;flex:none;accent-color:var(--brass)}
+.sms-terms{max-width:520px;margin-top:22px;padding-top:18px;border-top:1px solid #2A3350;font-size:13px;color:#8E99AC;line-height:1.6}
+.sms-terms p{margin:0 0 10px}
+.sms-terms a{color:#C6CEDC}
 
 footer{background:#0A101C;color:#8E99AC;font-size:14.5px;padding:34px 0 96px}
 footer a{color:#C6CEDC}
@@ -272,7 +277,7 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
       <a href="#apostille">Apostille</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="quote.html">Get a quote</a>
+      <a href='/quote'>Get a quote</a>
     </nav>
     <span class="bar-actions">
       <a class="book-link" href="#book">Book online</a>
@@ -286,7 +291,7 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
   <a href="#apostille">Apostille</a>
   <a href="#pricing">Pricing</a>
   <a href="#faq">FAQ</a>
-  <a href="quote.html">Get a quote</a>
+  <a href='/quote'>Get a quote</a>
   <a href="#book">Book now</a>
 </nav>
 
@@ -314,7 +319,7 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
     <a class="bignum" href="tel:+14048572810" data-tel="" data-tel-text="">(404) 857-2810</a>
     <p class="undercall">Call, text, or book online. Most appointments confirmed same day.</p>
     <div class="hero-cta">
-      <a class="btn-online" href="quote.html">See your price &amp; book →</a>
+      <a class='btn-online' href='/quote'>See your price &amp; book →</a>
     </div>
     <div class="badges">
       <span>Commissioned in Georgia</span>
@@ -409,7 +414,7 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
         <tr><td>Additional signer at the same address</td><td class="amt">no charge</td></tr>
       </tbody>
     </table>
-    <p class="note" style="margin-top:-8px"><a href="quote.html"><b>Get your exact price →</b></a> Type your address and see the full total before you book.</p>
+    <p class="note" style="margin-top:-8px"><a href='/quote'><b>Get your exact price →</b></a> Type your address and see the full total before you book.</p>
     <p class="note">A $20 deposit is charged to your card at booking and applied toward your total. It's refunded in full if you cancel at least 24 hours ahead of your appointment; otherwise it's forfeited. The remaining balance can be paid by cash, Zelle, Cash App, or card at the appointment. If the signing can't be completed when we arrive (an expired or invalid ID, a missing signer, or blank spaces left in the document), the travel fee still applies, since the appointment time was reserved and the visit was completed.</p>
   </div>
 </section>
@@ -503,7 +508,7 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
       <div class="book-online-box">
         <h3>See your price, then book</h3>
         <p>Type your address to get your exact price, then pick your own time. We confirm every request personally, usually within a couple hours.</p>
-        <a class="btn-online" href="quote.html">Get your price &amp; book →</a>
+        <a class='btn-online' href='/quote'>Get your price &amp; book →</a>
       </div>
 
       <div class="or-divider">or send the details directly</div>
@@ -511,6 +516,9 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
       <form id="bookform">
         <label for="f-name">Your name</label>
         <input id="f-name" name="name" autocomplete="name" required="">
+
+        <label for="f-phone">Your mobile number</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(404) 555-0123" required="">
 
         <label for="f-doc">What needs notarizing</label>
         <input id="f-doc" name="doc" placeholder="e.g. power of attorney, 2 signatures" required="">
@@ -524,8 +532,17 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
         <label for="f-notes">Anything else</label>
         <textarea id="f-notes" name="notes" placeholder="Signer is in a wheelchair, need a witness, parking is tight…"></textarea>
 
+        <label class="consent-check"><input type="checkbox" name="consentCare"> Yes, I consent to receive customer care messages from North Star Notary Group</label>
+        <label class="consent-check"><input type="checkbox" name="consentMarketing"> Yes, I consent to receive marketing text messages from North Star Notary Group</label>
+        <label class="consent-check"><input type="checkbox" name="consentNone"> No, I do not want to receive any text messages from North Star Notary Group</label>
+
         <button type="submit">Send this to North Star Notary Group</button>
       </form>
+      <div class="sms-terms">
+        <p>North Star Notary Group (doing business as North Star Notary Group) would like your consent to send customer care and/or marketing text message communications from (404) 857-2810 to your mobile number listed above. Customer care messages may include responses to messages you send us, as well as information relevant to your relationship with us. Marketing messages may include discount codes, special deals or texts promoting our products/services.</p>
+        <p>Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information.</p>
+        <p>We do not share your mobile opt-in information with anyone. Our combined Privacy Policy and Messaging Terms and Conditions are available at <a href="/privacy-policy.html">northstarnotarygroup.com/privacy-policy.html</a>.</p>
+      </div>
       <p class="orcall">Or call and text directly: <a href="tel:+14048572810" data-tel="" data-tel-text="">(404) 857-2810</a> · <span data-hours="">Available 24 hours a day, 7 days a week</span></p>
     </div>
   </div>
@@ -570,12 +587,18 @@ footer .fine{margin-top:16px;max-width:64ch;line-height:1.55}
   document.getElementById("bookform").addEventListener("submit", function(e){
     e.preventDefault();
     var f = e.target;
+    var consent = [];
+    if (f.consentCare.checked) consent.push("customer care texts");
+    if (f.consentMarketing.checked) consent.push("marketing texts");
+    if (f.consentNone.checked) consent.push("no texts");
     var body =
       "Notary request: " + f.name.value +
+      "\nPhone: " + f.phone.value +
       "\nDocument: " + f.doc.value +
       "\nWhere: " + f.where.value +
       "\nWhen: " + f.when.value +
-      (f.notes.value ? "\nNotes: " + f.notes.value : "");
+      (f.notes.value ? "\nNotes: " + f.notes.value : "") +
+      (consent.length ? "\nText consent: " + consent.join(", ") : "");
     var isPhone = /iPhone|iPad|Android/i.test(navigator.userAgent);
     if (isPhone) {
       var sep = /iPhone|iPad/i.test(navigator.userAgent) ? "&" : "?";
